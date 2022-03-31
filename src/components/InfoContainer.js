@@ -6,7 +6,9 @@ import Calendar from './Calender'
 import CountrySelect from "./CountrySelect";
 import axios from 'axios'
 import '../styles/InfoContainer.css'
-
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import Button from '@mui/material/Button';
 
 const getNewDate = (day) => {
     let newDate = new Date();
@@ -45,6 +47,7 @@ function InfoContainer() {
     const [deaths, setDeaths] = useState()
     const [tableData, setTableData] = useState([]);
     const [dataSet, setDataSet] = useState([])
+    const [open, setOpen] = useState(true);
 
     const options_2 = {
         method: 'GET',
@@ -107,16 +110,16 @@ function InfoContainer() {
 
             Promise.all(promise).then(res => {
                 setDataSet(res)
+                setOpen(false)
             })
         }
-
-        if (country !== 'Worldwide')
-            fetchCountryData()
+        fetchCountryData()
     }, [country])
 
     const onCountryChange = (code, label) => {
         setCountryCode(code)
         setCountry(label)
+        setOpen(true)
     }
 
     const onDateChange = (newDate) => {
@@ -125,6 +128,12 @@ function InfoContainer() {
 
     return (
         <div className='info-m'>
+            <Backdrop
+                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                open={open}
+            >
+                <CircularProgress color="inherit" />
+            </Backdrop>
             <div className='info-container'>
                 <div className='info-subcontainer'>
                     <div className='info-m1'>
