@@ -1,5 +1,9 @@
 # COVID-19 DASHBOARD REACT WEB APPLICATION
 
+## Website is live at the following link :point_down:
+
+Open [https://covid-19-5576f.web.app/](https://covid-19-5576f.web.app/) to view it in your browser.
+
 ## Available Scripts
 
 In the project directory, you can run:
