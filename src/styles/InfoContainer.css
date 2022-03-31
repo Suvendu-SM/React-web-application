@@ -1,0 +1,29 @@
+.info-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.info-subcontainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.info-container-meter {
+  margin: 0% 2%;
+  margin-top: 5%;
+  padding: 1%;
+  height: 15%;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+
+.info-m1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.MuiPaper-root {
+  background-color: #eaea87;
+}

@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import InfoContainer from './components/InfoContainer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 style={{ marginLeft: '2%' }}>Covid-19 Dashboard</h1>
+      <div className='main-container'>
+        <InfoContainer />
+      </div>
     </div>
   );
 }
